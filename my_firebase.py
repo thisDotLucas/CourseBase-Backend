@@ -9,7 +9,7 @@ def main():
 
 
 def fill_database(data_map):
-    db = firebase.FirebaseApplication("https://course-base-a4b41.firebaseio.com/", None)
+    db = firebase.FirebaseApplication("https://*****************.firebaseio.com/", None)
     db.delete("/courses", None)
 
     for key in data_map.keys():
