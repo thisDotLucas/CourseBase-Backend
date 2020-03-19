@@ -10,12 +10,13 @@ def main():
 
 def fill_database(data_map):
     db = firebase.FirebaseApplication("https://course-base-a4b41.firebaseio.com/", None)
-    db.delete("/courses", None)
+    for i in range(0, 4):  # Deletes old data for all periods.
+        db.delete("/period" + str(i + 1), None)
 
     for key in data_map.keys():
         data = data_map[key]
         insert = {"name": key, "url": data["url"], "timestamps": data["timestamps"], "period": data["period"]}
-        result = db.post("/courses", insert)
+        result = db.post("/period" + str(data["period"]), insert)
         print(result)
 
 

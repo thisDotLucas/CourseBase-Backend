@@ -40,9 +40,11 @@ def run():
                     data = {"url": courses[key], "timestamps": timestamps, "period": get_period(int(timestamps[0][3:5]))}
                     course_info[key] = data
 
+                    print(key)
                     print(course_info[key]["url"])
                     print(course_info[key]["timestamps"])
-                    print(course_info[key]["period"])
+                    print("Period " + course_info[key]["period"])
+                    print("-" * 80)
 
                     break
     return course_info
