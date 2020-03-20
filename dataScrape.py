@@ -9,7 +9,7 @@ all_courses = {}
 def scrape_studiehandboken():
     base_url = "https://studiehandboken.abo.fi"
     extensions = ["/en/degree-programme/3472", "/en/degree-programme/5071", "/en/degree-programme/4349",
-                  "/en/degree-programme/4653", "/en/degree-programme/11294"]
+                  "/en/degree-programme/4653", "/en/degree-programme/11294", "/en/degree-programme/8574"]
 
     for extension in extensions:
         soup = create_soup(base_url + extension)

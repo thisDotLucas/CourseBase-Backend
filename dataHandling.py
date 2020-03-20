@@ -43,7 +43,7 @@ def run():
                     print(key)
                     print(course_info[key]["url"])
                     print(course_info[key]["timestamps"])
-                    print("Period " + course_info[key]["period"])
+                    print("Period " + str(course_info[key]["period"]))
                     print("-" * 80)
 
                     break
@@ -73,10 +73,13 @@ def create_soup(url):
     course_box = driver.find_element_by_class_name("collapsible-header")
     course_box.click()
 
-    time.sleep(1)
-    show_more_link = driver.find_element_by_link_text("Show more")
-    show_more_link.click()
-
+    try:
+        time.sleep(1)
+        show_more_link = driver.find_element_by_link_text("Show more")
+        show_more_link.click()
+    except NoSuchElementException:
+        pass
+    
     time.sleep(random.randint(2, 6))
     page = driver.page_source
 
